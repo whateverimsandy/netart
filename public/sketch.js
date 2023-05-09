@@ -15,9 +15,9 @@ const num = 200;
 const noiseScale = 0.09/2;
 
 //declare function preload() to load a sound file with loadSound()
-/*function preload (){
+function preload (){
   river = loadSound ("river.mp3")
-}*/
+}
 
 
 function setup() {
@@ -35,11 +35,11 @@ function setup() {
 function draw() {
    
  
-/* if (mouseIsPressed){
+ if (mouseIsPressed){
     if ( river.isPlaying() ==false){
       river.loop()
     }
-  } */
+  } 
   
  if(mouseX <=100 & mouseY <=100){
     
