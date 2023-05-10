@@ -35,7 +35,7 @@ function setup() {
 function draw() {
    
 // The sound is played in loop when user clicks the mouse (anywhere within the canvas)
- if mouseClicked () {
+ if (mouseIsPressed) {
     if ( river.isPlaying() ==false){
       console.log (`hii! the mouseClicked function was called!`)
       river.loop()
