@@ -61,12 +61,24 @@ function draw() {
   }
 
   for(let i = 0; i < num; i ++) {
+    // create a new variable p and assign it the value of the i element in the particles array
     let p = particles[i];
+
+    // draw a point on the canvas at the position of the current particle p. 
     point(p.x, p.y);
+
+    //generate a Perlin noise value n based on the position of the particle p
     let n = noise(p.x * noiseScale, p.y * noiseScale, frameCount * noiseScale * noiseScale);
+
+    //calculate the angle a that the particle should move based on the n noise value
     let a = TAU * n;
+
+    //update the x and y positions of the current particle p based on the a angle
     p.x += cos(a);
     p.y += sin(a);
+
+    //check if the current particle p is still on the canvas, using the onScreen() function
+    //
     if(!onScreen(p)) {
       p.x = random(width);
       p.y = random(height);
@@ -74,7 +86,8 @@ function draw() {
   }
 }
 
-
+//check whether a given point (represented by a vector) is within the boundaries of a canvas. 
+//It returns true if the point is within the canvas and false otherwise.
 function onScreen(v) {
   return v.x >= 0 && v.x <= width && v.y >= 0 && v.y <= height;
 }
